@@ -43,12 +43,13 @@ class Cli
   {
     ['getopt' => $getopt, 'doc' => $doc] = self::loadOptions();
 
-    $url    = $getopt['u'] ?? $getopt['url'] ?? null;
+    $env    = getenv('DATABASE_URL') ?: null;
+    $url    = $getopt['u'] ?? $getopt['url'] ?? $env;
     $format = $getopt['f'] ?? $getopt['format'] ?? 'svg';
     $size   = $getopt['s'] ?? $getopt['size'] ?? 'midi';
     $help   = $getopt['h'] ?? $getopt['help'] ?? null;
 
-    if (empty($getopt)) {
+    if (empty($getopt) && empty($env)) {
       echo $doc;
       exit(1);
     }
@@ -59,7 +60,7 @@ class Cli
     }
 
     if (empty($url)) {
-      throw new RuntimeException('Database url not set');
+      throw new RuntimeException('Database url not set, use --url or DATABASE_URL environment variable.');
     }
 
     $puml    = self::generatePuml($url, $size);
