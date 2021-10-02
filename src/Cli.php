@@ -7,6 +7,7 @@ use Jawira\DbDraw\DbDraw;
 use Jawira\MiniGetopt\MiniGetopt;
 use RuntimeException;
 use function compact;
+use function getenv;
 use const PHP_EOL;
 
 class Cli
@@ -24,7 +25,11 @@ class Cli
     $mg->addRequired('s', 'size', 'Diagram size (default: midi)', 'mini|midi|maxi');
     $mg->addNoValue('h', 'help', 'Show help');
     $getopt = $mg->getopt();
-    $doc    = $mg->doc('Generate a diagram from your MySQL database.');
+    $usage  = ['mysql-draw --url=mysql://user:pass@host/db_name --size=mini --format=png',
+               'mysql-draw --url=mysql://user:pass@host:3306/db_name?serverVersion=5.7',
+               'mysql-draw --url=mysql://user:pass@host/db_name?serverVersion=mariadb-10.3.22',
+               'DATABASE_URL=mysql://user:pass@host/db_name mysql-draw',];
+    $doc    = $mg->doc('Generate a diagram from your MySQL database.', $usage);
 
     return compact('getopt', 'doc');
   }
