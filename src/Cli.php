@@ -5,9 +5,12 @@ namespace Jawira\MysqlDraw;
 use Doctrine\DBAL\DriverManager;
 use Jawira\DbDraw\DbDraw;
 use Jawira\MiniGetopt\MiniGetopt;
+use Jawira\PlantUmlClient\Client;
+use Jawira\PlantUmlClient\Format;
 use RuntimeException;
 use function compact;
 use function getenv;
+use function in_array;
 use const PHP_EOL;
 
 class Cli
@@ -16,6 +19,7 @@ class Cli
    * Return cli options
    *
    * @throws \Jawira\MiniGetopt\MiniGetoptException
+   * @return array{getopt: array, doc: string}
    */
   static protected function loadOptions(): array
   {
@@ -39,7 +43,7 @@ class Cli
    * @throws \Jawira\MiniGetopt\MiniGetoptException
    * @throws \Exception
    */
-  static public function main()
+  static public function main(): void
   {
     ['getopt' => $getopt, 'doc' => $doc] = self::loadOptions();
 
@@ -84,12 +88,26 @@ class Cli
     return $dbDraw->generatePuml($size);
   }
 
-  protected static function generateDiagram(string $puml, string $format)
+  /**
+   * Convert PlantUML diagram to image
+   *
+   * @param string $puml   PlantUML diagram
+   * @param string $format Target format
+   *
+   * @throws \Jawira\PlantUmlClient\ClientException
+   * @return string
+   */
+  protected static function generateDiagram(string $puml, string $format): string
   {
     if ($format === 'puml') {
       return $puml;
     }
-    throw new RuntimeException('Format not implemented');
+    if (!in_array($format, [Format::PNG, Format::SVG])) {
+      throw new RuntimeException("Invalid format $format");
+    }
+    $client = new Client();
+
+    return $client->generateImage($puml, $format);
   }
 
 }

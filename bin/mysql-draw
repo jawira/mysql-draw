@@ -3,7 +3,7 @@
 
 use Jawira\MysqlDraw\Cli;
 
-function autoload()
+function autoload(): void
 {
   $autoloads = ['in dev'     => __DIR__ . DIRECTORY_SEPARATOR . '../vendor/autoload.php',
                 'as library' => __DIR__ . DIRECTORY_SEPARATOR . '../../../vendor/autoload.php',];
