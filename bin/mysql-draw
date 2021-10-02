@@ -1,0 +1,31 @@
+#!/usr/bin/env php
+<?php declare(strict_types=1);
+
+use Jawira\MysqlDraw\Cli;
+
+function autoload()
+{
+  $autoloads = ['in dev'     => __DIR__ . DIRECTORY_SEPARATOR . '../vendor/autoload.php',
+                'as library' => __DIR__ . DIRECTORY_SEPARATOR . '../../../vendor/autoload.php',];
+  array_walk($autoloads, function (string $autoload) {
+    if (is_file($autoload)) {
+      require $autoload;
+    }
+  });
+}
+
+function main(): void
+{
+  try {
+    $code = 0;
+    autoload();
+    Cli::main();
+  } catch (Throwable $throwable) {
+    echo $throwable->getMessage() . PHP_EOL;
+    $code = 1;
+  } finally {
+    exit($code);
+  }
+}
+
+main();

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="183px" preserveAspectRatio="none" style="width:1319px;height:183px;background:#FFFFFF;" version="1.1" viewBox="0 0 1319 183" width="1319px" zoomAndPan="magnify"><defs/><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="117" x="594.8197" y="16.708">MySQL Draw</text><ellipse cx="100.6638" cy="41.5343" fill="#FFFECC" rx="40.6638" ry="14.5812" style="stroke:#333333;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="77.5122" y="45.1963">setup</text><ellipse cx="100.5638" cy="154.7659" fill="#FFFECC" rx="94.5638" ry="21.3128" style="stroke:#333333;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="24.5638" y="157.6126">composer:install-dev</text><ellipse cx="531.5061" cy="41.4768" fill="#FFFECC" rx="23.5061" ry="14.5236" style="stroke:#333333;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="17" x="523.0061" y="44.3234">qa</text><ellipse cx="316.5998" cy="155.1731" fill="#FFFECC" rx="86.5998" ry="19.72" style="stroke:#333333;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="249.5998" y="158.0198">composer:validate</text><ellipse cx="531.2771" cy="154.9085" fill="#FFFECC" rx="92.7771" ry="20.9554" style="stroke:#333333;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="148" x="457.2771" y="157.7552">composer:normalize</text><ellipse cx="713.3472" cy="155.1746" fill="#FFFECC" rx="53.3472" ry="14.7215" style="stroke:#333333;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="681.3472" y="158.9221">php:lint</text><ellipse cx="998.3338" cy="41.4818" fill="#FFFECC" rx="34.8338" ry="14.5287" style="stroke:#333333;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="33" x="981.1671" y="44.5699">phar</text><ellipse cx="900.6626" cy="154.9857" fill="#FFFECC" rx="98.1626" ry="22.0325" style="stroke:#333333;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="820.6626" y="157.8323">composer:install-prod</text><ellipse cx="1096.5625" cy="154.9656" fill="#FFFECC" rx="63.0625" ry="15.0125" style="stroke:#333333;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="1057.0625" y="158.7132">phar:build</text><ellipse cx="1254.6191" cy="41.4791" fill="#FFFECC" rx="34.1191" ry="14.526" style="stroke:#333333;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="1238.1725" y="44.4912">help</text><ellipse cx="1254.3197" cy="154.7202" fill="#FFFECC" rx="59.3197" ry="14.7671" style="stroke:#333333;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="1218.3197" y="158.4678">visualizer</text><!--MD5=[751d62ae29326f3050ea8da88ad1b34c]
+link setup to composer:install-dev--><path d="M100.5,56.1251 C100.5,73.9991 100.5,105.6675 100.5,128.1275 " fill="none" id="setup-to-composer:install-dev" style="stroke:#1A85FF;stroke-width:2.0;"/><polygon fill="#1A85FF" points="100.5,133.3398,104.5,124.3398,100.5,128.3398,96.5,124.3398,100.5,133.3398" style="stroke:#1A85FF;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="101.5" y="99.02">depend:1</text><!--MD5=[2b3f4df63b0ee79c9fb6dbf297809d2e]
+link qa to composer:validate--><path d="M514.269,51.3891 C479.711,69.3111 401.228,110.0128 354.183,134.4105 " fill="none" id="qa-to-composer:validate" style="stroke:#1A85FF;stroke-width:2.0;"/><polygon fill="#1A85FF" points="349.731,136.7194,359.5621,136.1278,354.1698,134.4179,355.8797,129.0257,349.731,136.7194" style="stroke:#1A85FF;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="444.5" y="99.02">depend:1</text><!--MD5=[bd109b3677e86d799c713ba6a41cbebf]
+link qa to composer:normalize--><path d="M531.5,56.1251 C531.5,74.1061 531.5,106.0495 531.5,128.5323 " fill="none" id="qa-to-composer:normalize" style="stroke:#1A85FF;stroke-width:2.0;"/><polygon fill="#1A85FF" points="531.5,133.7451,535.5,124.7451,531.5,128.7451,527.5,124.7451,531.5,133.7451" style="stroke:#1A85FF;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="532.5" y="99.02">depend:2</text><!--MD5=[1748b89255b60d33f2cdf4c4b14f6851]
+link qa to php:lint--><path d="M547.651,52.3481 C579.502,71.8611 650.605,115.4212 688.537,138.6601 " fill="none" id="qa-to-php:lint" style="stroke:#1A85FF;stroke-width:2.0;"/><polygon fill="#1A85FF" points="692.994,141.3903,687.4105,133.2771,688.7309,138.7777,683.2303,140.098,692.994,141.3903" style="stroke:#1A85FF;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="629.5" y="99.02">depend:3</text><!--MD5=[2a034eff9be3e3f378a62a58a537e70f]
+link phar to composer:install-prod--><path d="M987.258,55.2431 C971.479,73.1961 942.446,106.2288 922.336,129.1086 " fill="none" id="phar-to-composer:install-prod" style="stroke:#1A85FF;stroke-width:2.0;"/><polygon fill="#1A85FF" points="918.94,132.9726,927.8859,128.8531,922.2408,129.217,921.8769,123.5719,918.94,132.9726" style="stroke:#1A85FF;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="959.5" y="99.02">depend:1</text><!--MD5=[84de4cd96d4df311c7cedc5ac9ca2468]
+link phar to phar:build--><path d="M1009.74,55.2431 C1027.16,75.0601 1060.73,113.2525 1080.62,135.8802 " fill="none" id="phar-to-phar:build" style="stroke:#1A85FF;stroke-width:2.0;"/><polygon fill="#1A85FF" points="1084.16,139.9163,1081.2247,130.5151,1080.8598,136.1601,1075.2148,135.7953,1084.16,139.9163" style="stroke:#1A85FF;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="1051.5" y="99.02">depend:2</text><!--MD5=[9f3237f55493a0d177cfac72db78ff2c]
+link help to visualizer--><path d="M1254.5,56.1251 C1254.5,75.8291 1254.5,112.2985 1254.5,134.7134 " fill="none" id="help-to-visualizer" style="stroke:#D41159;stroke-width:2.0;"/><polygon fill="#D41159" points="1254.5,139.8174,1258.5,130.8174,1254.5,134.8174,1250.5,130.8174,1254.5,139.8174" style="stroke:#D41159;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="1255.5" y="99.02">call:1</text><!--MD5=[e1dc5005f90320857254c80aa647255c]
+@startuml
+title
+MySQL Draw
+end title
+
+top to bottom direction
+
+skinparam Shadowing false
+skinparam ArrowFontColor Black
+skinparam ArrowThickness 2
+skinparam UseCaseBackgroundColor #FFFECC
+skinparam UseCaseBorderColor #333333
+skinparam UseCaseBorderThickness 2
+skinparam UseCaseFontColor Black
+
+
+(setup) -[#1A85FF]-> (composer:install-dev) : depend:1
+(qa) -[#1A85FF]-> (composer:validate) : depend:1
+(qa) -[#1A85FF]-> (composer:normalize) : depend:2
+(qa) -[#1A85FF]-> (php:lint) : depend:3
+(phar) -[#1A85FF]-> (composer:install-prod) : depend:1
+(phar) -[#1A85FF]-> (phar:build) : depend:2
+(help) -[#D41159]-> (visualizer) : call:1
+(setup)
+(qa)
+(phar)
+(composer:install-dev)
+(composer:install-prod)
+(phar:build)
+(composer:validate)
+(composer:normalize)
+(php:lint)
+(help)
+(visualizer)
+@enduml
+
+PlantUML version 1.2021.11beta7(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

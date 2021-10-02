@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="MySQL Draw" description="Generate a diagram from your MySQL database" default="help" phingVersion="3">
+
+  <property name="app.version" value="dev"/>
+
+  <target name="setup" depends="composer:install-dev"/>
+  <target name="qa" depends="composer:validate,composer:normalize,php:lint"/>
+  <target name="phar" depends="composer:install-prod,phar:build"/>
+
+  <target name="composer:install-dev" description="PHP dependencies">
+    <composer command="install">
+      <arg value="--no-interaction"/>
+      <arg value="--prefer-dist"/>
+      <arg value="--no-progress"/>
+      <arg value="--ansi"/>
+    </composer>
+  </target>
+
+  <target name="composer:install-prod" description="PHP dependencies">
+    <composer command="install">
+      <arg value="--no-interaction"/>
+      <arg value="--prefer-dist"/>
+      <arg value="--no-progress"/>
+      <arg value="--ansi"/>
+      <arg value="--no-dev"/>
+      <arg value="--optimize-autoloader"/>
+      <arg value="--classmap-authoritative"/>
+    </composer>
+  </target>
+
+  <target name="phar:build" description="Create phar file">
+    <mkdir dir="resources/build/"/>
+    <pharpackage basedir="." stub="bin/stub.php" alias="mysql-draw" compression="gzip"
+                 destfile="resources/build/mysql-draw.phar">
+      <fileset dir=".">
+        <include name="src/**/*.php"/>
+        <include name="vendor/**/*.php"/>
+        <include name="composer.json"/>
+      </fileset>
+      <metadata>
+        <element name="version" value="${app.version}"/>
+        <element name="authors">
+          <element name="Jawira Portugal">
+            <element name="e-mail" value="dev@tugal.be"/>
+          </element>
+        </element>
+      </metadata>
+    </pharpackage>
+    <chmod file="resources/build/mysql-draw.phar" mode="0775" failonerror="true"/>
+  </target>
+
+  <target name="composer:validate" description="Validate composer.json">
+    <composer command="validate">
+      <arg value="--ansi"/>
+    </composer>
+  </target>
+
+  <target name="composer:normalize" description="Normalize composer.json">
+    <composer command="normalize">
+      <arg value="--ansi"/>
+      <arg value="--diff"/>
+      <arg value="--indent-size=2"/>
+      <arg value="--indent-style=space"/>
+    </composer>
+  </target>
+
+  <target name="php:lint" description="Validate PHP syntax">
+    <phplint>
+      <fileset dir=".">
+        <include name="bin/*.php"/>
+        <include name="src/*.php"/>
+      </fileset>
+    </phplint>
+  </target>
+
+  <target name="help">
+    <uptodate property="uptodate.visualizer" srcfile="build.xml" targetfile="build.svg"/>
+    <runtarget target="visualizer"/>
+    <open path="build.svg"/>
+  </target>
+
+  <target name="visualizer" unless="uptodate.visualizer" description="Create buildfile map">
+    <visualizer format="svg"/>
+  </target>
+
+</project>
