@@ -6,8 +6,8 @@ use Doctrine\DBAL\DriverManager;
 use Jawira\DbDraw\DbDraw;
 use Jawira\MiniGetopt\MiniGetopt;
 use RuntimeException;
-use function array_key_exists;
 use function compact;
+use const PHP_EOL;
 
 class Cli
 {
@@ -57,31 +57,33 @@ class Cli
       throw new RuntimeException('Database url not set');
     }
 
-    $puml = self::generatePuml($url, $size);
-
-    $diagram = $format === 'puml' ? $puml : $puml;
-
+    $puml    = self::generatePuml($url, $size);
+    $diagram = self::generateDiagram($puml, $format);
     file_put_contents("database.$format", $diagram);
-    echo 'mysql-draw by Jawira Portugal';
+    echo 'mysql-draw by Jawira Portugal', PHP_EOL;
   }
 
   /**
-   * @param mixed $url
-   * @param mixed $size
-   *
    * @throws \Doctrine\DBAL\Exception
    * @return string
    */
-  protected static function generatePuml(mixed $url, mixed $size): string
+  protected static function generatePuml(string $url, string $size): string
   {
     $params     = ['url'    => $url,
                    'driver' => 'pdo_mysql'];
     $connection = DriverManager::getConnection($params);
     $connection->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'string');
     $dbDraw = new DbDraw($connection);
-    $puml   = $dbDraw->generatePuml($size);
 
-    return $puml;
+    return $dbDraw->generatePuml($size);
+  }
+
+  protected static function generateDiagram(string $puml, string $format)
+  {
+    if ($format === 'puml') {
+      return $puml;
+    }
+    throw new RuntimeException('Format not implemented');
   }
 
 }

@@ -13,7 +13,8 @@
     "php": "^7.4 || ^8.0",
     "doctrine/dbal": "^2.5",
     "jawira/db-draw": "^1.2",
-    "jawira/mini-getopt": "^1.2"
+    "jawira/mini-getopt": "^1.2",
+    "jawira/plantuml-client": "^1.0"
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2.15",

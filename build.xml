@@ -2,11 +2,15 @@
 
 <project name="MySQL Draw" description="Generate a diagram from your MySQL database" default="help" phingVersion="3">
 
+  <property name="dc.project-name" value="mysql-draw"/>
+  <property name="db.database" value="${dc.project-name}"/>
+  <property name="db.password" value="groot"/>
+  <property name="db.user" value="groot"/>
   <property name="app.version" value="dev"/>
 
-  <target name="setup" depends="composer:install-dev"/>
+  <target name="setup" depends="composer:install-dev,dc:up,dc:ip"/>
   <target name="qa" depends="composer:validate,composer:normalize,php:lint"/>
-  <target name="phar" depends="composer:install-prod,phar:build"/>
+  <target name="phar" depends="composer:install-prod,phar:build,composer:install-dev"/>
 
   <target name="composer:install-dev" description="PHP dependencies">
     <composer command="install">
@@ -82,6 +86,41 @@
 
   <target name="visualizer" unless="uptodate.visualizer" description="Create buildfile map">
     <visualizer format="svg"/>
+  </target>
+
+  <target name="dc:up" description="Launch containers">
+    <exec executable="docker-compose" passthru="true" checkreturn="true">
+      <arg line="--project-name ${dc.project-name}"/>
+      <arg value="up"/>
+      <arg value="--detach"/>
+      <arg value="--remove-orphans"/>
+    </exec>
+  </target>
+
+  <target name="dc:stop" description="Stop containers">
+    <exec executable="docker-compose" passthru="true">
+      <arg line="--project-name ${dc.project-name}"/>
+      <arg value="stop"/>
+    </exec>
+  </target>
+
+  <target name="dc:down" description="Take down containers, networks, images, and volumes">
+    <exec executable="docker-compose" passthru="true">
+      <arg line="--project-name ${dc.project-name}"/>
+      <arg value="down"/>
+      <arg value="--volumes"/>
+      <arg value="--remove-orphans"/>
+    </exec>
+  </target>
+
+  <target name="dc:ip" description="Reveal containers ip addresses">
+    <property name="dc.format"
+              value="--format='{{ .Name }}{{&quot;\t&quot;}}{{range .NetworkSettings.Networks}}{{.IPAddress}}{{&quot;\t&quot;}}{{end}}'"/>
+    <exec executable="docker" checkreturn="true" passthru="true">
+      <arg value="inspect"/>
+      <arg line="${dc.format}"/>
+      <arg value="${dc.project-name}_db_1"/>
+    </exec>
   </target>
 
 </project>

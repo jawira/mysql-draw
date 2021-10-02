@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5721ee594a051ec16c43d08c94631f9f",
+    "content-hash": "589da32efc81b40c1cb4fbd2b8311cef",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -467,6 +467,111 @@
                 "source": "https://github.com/jawira/mini-getopt/tree/v1.2.1"
             },
             "time": "2021-10-02T09:02:48+00:00"
+        },
+        {
+            "name": "jawira/plantuml-client",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jawira/plantuml-client.git",
+                "reference": "295a07a5553bfb1ce16d02ccad7959adc12ae925"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jawira/plantuml-client/zipball/295a07a5553bfb1ce16d02ccad7959adc12ae925",
+                "reference": "295a07a5553bfb1ce16d02ccad7959adc12ae925",
+                "shasum": ""
+            },
+            "require": {
+                "jawira/plantuml-encoding": "^1.0",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.13",
+                "ext-fileinfo": "*",
+                "pds/skeleton": "^1.0",
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jawira\\PlantUmlClient\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jawira Portugal",
+                    "email": "dev@tugal.be"
+                }
+            ],
+            "description": "Convert PlantUML diagrams into images.",
+            "keywords": [
+                "diagram",
+                "image",
+                "plantuml",
+                "uml"
+            ],
+            "support": {
+                "issues": "https://github.com/jawira/plantuml-client/issues",
+                "source": "https://github.com/jawira/plantuml-client/tree/v1.0.1"
+            },
+            "time": "2021-06-29T20:21:34+00:00"
+        },
+        {
+            "name": "jawira/plantuml-encoding",
+            "version": "v1.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jawira/plantuml-encoding.git",
+                "reference": "cd9e39eb95c682f6b15edb6c6f39253321628592"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jawira/plantuml-encoding/zipball/cd9e39eb95c682f6b15edb6c6f39253321628592",
+                "reference": "cd9e39eb95c682f6b15edb6c6f39253321628592",
+                "shasum": ""
+            },
+            "require": {
+                "ext-zlib": "*",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.47",
+                "symplify/changelog-linker": "^8.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/plantuml_functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jawira Portugal"
+                }
+            ],
+            "description": "PlantUML text encoding functions",
+            "keywords": [
+                "encodep",
+                "encoding",
+                "functions",
+                "plantuml",
+                "uml"
+            ],
+            "support": {
+                "issues": "https://github.com/jawira/plantuml-encoding/issues",
+                "source": "https://github.com/jawira/plantuml-encoding/tree/v1.0.8"
+            },
+            "time": "2020-10-01T08:56:21+00:00"
         },
         {
             "name": "jawira/the-lost-functions",

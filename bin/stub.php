@@ -1,11 +1,13 @@
 #!/usr/bin/env php
 <?php declare(strict_types=1);
 
+use Jawira\MysqlDraw\Cli;
+
 try {
   set_time_limit(0);
   Phar::mapPhar('mysql-draw');
   require 'phar://mysql-draw/vendor/autoload.php';
-  echo 'hello', PHP_EOL;
+  Cli::main();
 } catch (Throwable $throwable) {
   echo $throwable->getMessage() . PHP_EOL;
   exit(1);

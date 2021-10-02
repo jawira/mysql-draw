@@ -5,3 +5,8 @@
 /composer-setup.php
 /side-suite-*
 /resources/build/
+/docker-compose.override.yaml
+/xdebug.log
+/database.puml
+/database.svg
+/database.png

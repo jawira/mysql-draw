@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+
+  db:
+    image: genschsa/mysql-employees
+    environment:
+      MYSQL_DATABASE: employees
+      MYSQL_USER: groot
+      MYSQL_PASSWORD: groot
+      MYSQL_ROOT_PASSWORD: groot
+    networks:
+      - default
+
+networks:
+  default:
+
