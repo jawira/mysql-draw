@@ -18,7 +18,8 @@
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2.15",
-    "jawira/skeleton": "^2.6"
+    "jawira/skeleton": "^2.6",
+    "phpstan/phpstan": "^0.12.99"
   },
   "suggest": {
     "phing/phing": "PHP Build Tool"

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project name="MySQL Draw" description="Generate a diagram from your MySQL database" default="help" phingVersion="3">
 
   <property name="dc.project-name" value="mysql-draw"/>
@@ -9,7 +8,7 @@
   <property name="app.version" value="dev"/>
 
   <target name="setup" depends="composer:install-dev,dc:up,dc:ip"/>
-  <target name="qa" depends="composer:validate,composer:normalize,php:lint"/>
+  <target name="qa" depends="composer:validate,composer:normalize,php:lint,phpstan:analyse"/>
   <target name="phar" depends="composer:install-prod,phar:build,composer:install-dev"/>
 
   <target name="composer:install-dev" description="PHP dependencies">
@@ -120,6 +119,17 @@
       <arg value="inspect"/>
       <arg line="${dc.format}"/>
       <arg value="${dc.project-name}_db_1"/>
+    </exec>
+  </target>
+
+  <target name="phpstan:analyse" description="Analyse at max level">
+    <exec executable="vendor/bin/phpstan" passthru="true" checkreturn="true">
+      <arg value="analyse"/>
+      <arg line="--level=max"/>
+      <arg value="--no-progress"/>
+      <arg value="--no-interaction"/>
+      <arg value="--ansi"/>
+      <arg path="src"/>
     </exec>
   </target>
 
