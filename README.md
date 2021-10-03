@@ -20,7 +20,7 @@ mysql-draw --url=mysql://user:pass@host/db_name --size=mini --format=png
 
 ### Phar file
 
-Download the latest release from releases page <https://github.com/jawira/mysql-draw/releases>:
+Download the latest _.phar_ file from releases page <https://github.com/jawira/mysql-draw/releases>:
 
 ```console
 wget https://github.com/jawira/mysql-draw/releases/download/v0.1.0/mysql-draw.phar
@@ -45,6 +45,7 @@ vendor/bin/mysql-draw --help
 
 - PHP 7.4 or newer
 - mbstring extension
+- mysql extension
 
 ## Contributing
 
