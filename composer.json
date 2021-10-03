@@ -1,11 +1,18 @@
 {
   "name": "jawira/mysql-draw",
   "type": "library",
-  "description": "Generate a diagram from your mysql database",
+  "description": "\ud83d\udcd0 Standalone tool to generate MySQL database diagrams",
+  "keywords": [
+    "database",
+    "diagram",
+    "doctrine",
+    "uml",
+    "symfony"
+  ],
   "license": "MIT",
   "authors": [
     {
-      "name": "jawira",
+      "name": "Jawira Portugal",
       "email": "dev@tugal.be"
     }
   ],
@@ -33,5 +40,8 @@
     "psr-4": {
       "Jawira\\MysqlDraw\\": "src/"
     }
+  },
+  "support": {
+    "issues": "https://github.com/jawira/mysql-draw/issues"
   }
 }
