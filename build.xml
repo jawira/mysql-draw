@@ -118,7 +118,8 @@
     <exec executable="docker" checkreturn="true" passthru="true">
       <arg value="inspect"/>
       <arg line="${dc.format}"/>
-      <arg value="${dc.project-name}_db_1"/>
+      <arg value="${dc.project-name}_employees_1"/>
+      <arg value="${dc.project-name}_sakila_1"/>
     </exec>
   </target>
 

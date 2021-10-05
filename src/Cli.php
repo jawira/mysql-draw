@@ -83,6 +83,7 @@ class Cli
                    'driver' => 'pdo_mysql'];
     $connection = DriverManager::getConnection($params);
     $connection->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'string');
+    $connection->getDatabasePlatform()->registerDoctrineTypeMapping('geometry', 'string');
     $dbDraw = new DbDraw($connection);
 
     return $dbDraw->generatePuml($size);
