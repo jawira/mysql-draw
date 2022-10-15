@@ -18,6 +18,10 @@ indent_style = space
 indent_size  = 2
 indent_style = space
 
+[*.php]
+ij_php_align_assignments = true
+ij_php_align_inline_comments = true
+
 [*.{md, markdown}]
 trim_trailing_whitespace = false
 indent_size              = 2
