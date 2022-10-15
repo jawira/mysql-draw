@@ -21,6 +21,18 @@ services:
     networks:
       - default
 
+  puml:
+    image: plantuml/plantuml-server:tomcat
+    labels:
+      - 'traefik.enable=true'
+    environment:
+      PLANTUML_LIMIT_SIZE: 10000
+    networks:
+      - default
+      - traefik_default
+
 networks:
   default:
+  traefik_default:
+    external: true
 

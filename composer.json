@@ -1,6 +1,6 @@
 {
   "name": "jawira/mysql-draw",
-  "description": "\ud83d\udcd0 Standalone tool to generate MySQL database diagrams",
+  "description": "\ud83d\udcd0 Minimalist standalone tool to generate MySQL database diagrams.",
   "license": "MIT",
   "type": "library",
   "keywords": [
@@ -24,7 +24,8 @@
     "doctrine/dbal": "^2.5",
     "jawira/db-draw": "^1.2",
     "jawira/mini-getopt": "^1.2",
-    "jawira/plantuml-client": "^1.0"
+    "jawira/plantuml-client": "^1.0",
+    "jawira/plantuml-to-image": "^0.2.0"
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2.15",

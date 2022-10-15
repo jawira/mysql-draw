@@ -1,11 +1,11 @@
 # MySQL Draw
 
-**📐 Standalone tool to generate MySQL database diagrams.**
+**📐 Minimalist standalone tool to generate MySQL database diagrams.**
 
-[![Latest Stable Version](http://poser.pugx.org/jawira/mysql-draw/v)](https://packagist.org/packages/jawira/mysql-draw)
-[![Total Downloads](http://poser.pugx.org/jawira/mysql-draw/downloads)](https://packagist.org/packages/jawira/mysql-draw)
-[![License](http://poser.pugx.org/jawira/mysql-draw/license)](https://packagist.org/packages/jawira/mysql-draw)
-[![PHP Version Require](http://poser.pugx.org/jawira/mysql-draw/require/php)](https://packagist.org/packages/jawira/mysql-draw)
+![Packagist Version](https://img.shields.io/packagist/v/jawira/mysql-draw?style=for-the-badge)
+![Packagist Downloads](https://img.shields.io/packagist/dt/jawira/mysql-draw?style=for-the-badge)
+![Packagist License](https://img.shields.io/packagist/l/jawira/mysql-draw?style=for-the-badge)
+![Packagist PHP Version](https://img.shields.io/packagist/dependency-v/jawira/mysql-draw/php?style=for-the-badge)
 
 ## Usage
 
