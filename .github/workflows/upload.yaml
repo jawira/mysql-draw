@@ -25,6 +25,7 @@ jobs:
         run: bin/phing composer:install-prod phar:build -Dapp.version=$RELEASE_TAG
 
       - name: Upload release assets
+        run: gh release upload "$TAG" resources/build/mysql-draw.phar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload "$RELEASE_TAG" resources/build/mysql-draw.phar
+          TAG: ${{ github.event.release.tag_name }}
