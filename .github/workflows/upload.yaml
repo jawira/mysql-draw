@@ -1,0 +1,27 @@
+name: Upload Phar file
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  upload:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          extensions: mbstring, intl
+          ini-values: phar.readonly=off
+          tools: composer:v2
+
+      - uses: actions/checkout@v2
+
+      - name: Create phar file
+        run: phing composer:install-prod phar:build
+
+      - name: Upload release assets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload "$RELEASE_TAG" resources/build/mysql-draw.phar
