@@ -1,0 +1,31 @@
+name: Upload Phar file
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  upload:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          extensions: mbstring, intl
+          ini-values: phar.readonly=off
+          tools: composer:v2
+
+      - uses: actions/checkout@v2
+
+      - name: Download phing
+        run: curl -L -C - -s -S -o bin/phing https://github.com/phingofficial/phing/releases/download/3.0.0-RC3/phing-3.0.0-RC3.phar && chmod +x bin/phing
+
+      - name: Create phar file
+        run: bin/phing composer:install-prod phar:build -Dapp.version=$RELEASE_TAG
+
+      - name: Upload release assets
+        run: gh release upload "$TAG" resources/build/mysql-draw.phar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.event.release.tag_name }}
